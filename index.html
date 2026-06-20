@@ -1,1 +1,807 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PointCookMedia | Social Media Agency for Local Businesses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="PointCookMedia supports Indian migrants and local businesses with viral‑style reels, creative content, and AI‑driven social media management."
+  />
+  <style>
+    :root {
+      --blue: #0057ff;
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --orange: #ff7a00;
+      --grey: #f5f5f5;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      font-size: 1.1rem;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding: 32px 0;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--grey);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge span {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .hero-right {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-right h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+
+    .metric-label {
+      color: #aaa;
+      font-size: 0.75rem;
+    }
+
+    .metric-value {
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .hero-tags {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .hero-tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Sections */
+    section {
+      padding: 32px 0;
+      border-top: 1px solid #eee;
+    }
+
+    section:first-of-type {
+      border-top: none;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .about-text p {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .about-list li::before {
+      content: "• ";
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .about-card {
+      background: var(--grey);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 0.9rem;
+    }
+
+    .about-card h4 {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      border-radius: 14px;
+      border: 1px solid #eee;
+      padding: 16px;
+      background: #fafafa;
+      font-size: 0.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .service-card li {
+      margin-bottom: 4px;
+    }
+
+    .service-card li::before {
+      content: "› ";
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    /* Packages */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .package-card {
+      border-radius: 16px;
+      border: 1px solid #eee;
+      padding: 18px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .package-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .package-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .package-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .package-card ul {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .package-card li {
+      margin-bottom: 4px;
+    }
+
+    .package-card li::before {
+      content: "✓ ";
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .package-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* Why */
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .why-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .why-list li {
+      margin-bottom: 8px;
+    }
+
+    .why-list li::before {
+      content: "• ";
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--grey);
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .cta h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      color: #ddd;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 18px 16px;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--blue);
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .about-grid,
+      .why-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        padding: 12px 16px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        POINT<span>COOK</span>MEDIA
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Book a Call
+        </button>
+      </nav>
+    </div>
+  </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <div class="hero-badge">
+            📍 Point Cook • Tarneit • Truganina • Werribee
+            <span>Local Social Media Agency</span>
+          </div>
+          <h1 class="hero-title">
+            Grow Your Business with <span>Viral Reels</span>
+          </h1>
+          <p class="hero-subtitle">
+            PointCookMedia helps Indian migrants and local small businesses attract
+            real customers using short‑form video, reels and AI‑powered social
+            media management.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">
+              View Packages
+            </button>
+            <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Get a Free Sample Reel
+            </button>
+          </div>
+          <p class="hero-note">
+            We specialise in restaurants, migration agents, tutors, real estate and
+            local service businesses.
+          </p>
+        </div>
+
+        <aside class="hero-right">
+          <h3>POINTCOOKMEDIA SNAPSHOT</h3>
+          <p style="font-size:0.85rem;">
+            Hyper‑local content studio focused on Melbourne’s western suburbs. Built
+            for Indian migrants & small businesses who want growth, not just likes.
+          </p>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <div class="metric-label">Content Focus</div>
+              <div class="metric-value">Reels • Shorts • TikTok</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Core Services</div>
+              <div class="metric-value">Creation • Editing • Management</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Ideal Clients</div>
+              <div class="metric-value">Restaurants • Agents • Tutors</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Starting From</div>
+              <div class="metric-value">$199 / month</div>
+            </div>
+          </div>
+          <div class="hero-tags">
+            <div class="hero-tag">AI‑Powered Editing</div>
+            <div class="hero-tag">Local On‑Site Shoots</div>
+            <div class="hero-tag">Instagram & TikTok</div>
+            <div class="hero-tag">Community‑Focused</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <h2 class="section-title">About PointCookMedia</h2>
+        <p class="section-subtitle">
+          We exist to help local businesses in Point Cook and surrounding suburbs
+          show up online with confidence, clarity and consistency.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              PointCookMedia is a social media content agency focused on Indian
+              migrants and local small businesses in Melbourne’s west. We create
+              short‑form video content that feels real, local and trustworthy.
+            </p>
+            <p>
+              Instead of generic posts, we focus on:
+            </p>
+            <ul class="about-list">
+              <li>Reels that show your food, service or expertise</li>
+              <li>Short, clear videos explaining your offers</li>
+              <li>Consistent posting so customers remember you</li>
+            </ul>
+            <p>
+              Whether you’re a restaurant in Point Cook, a migration agent in
+              Werribee or a tutor in Tarneit, we help you turn attention into
+              enquiries and foot traffic.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h4>Who We Work With</h4>
+            <p>
+              Our sweet spot is local businesses that rely on trust and word‑of‑mouth:
+            </p>
+            <ul class="about-list">
+              <li>Indian restaurants & cafes</li>
+              <li>Migration & education agents</li>
+              <li>Tutors & coaching centres</li>
+              <li>Real estate agents & property services</li>
+              <li>Local trades & service providers</li>
+            </ul>
+            <p style="margin-top:8px;">
+              If your customers live in Point Cook, Tarneit, Truganina, Werribee or
+              nearby — we’re built for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">
+          End‑to‑end social media content for busy business owners who don’t have
+          time to plan, shoot, edit and post.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Reels & Short‑Form Video</h3>
+            <p>
+              High‑impact vertical videos for Instagram, Facebook and TikTok.
+            </p>
+            <ul>
+              <li>Concept & script ideas</li>
+              <li>On‑site filming (where applicable)</li>
+              <li>Editing with captions, music & effects</li>
+              <li>Optimised for mobile & social platforms</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>Social Media Management</h3>
+            <p>
+              We handle your content calendar, posting and basic engagement.
+            </p>
+            <ul>
+              <li>Monthly content planning</li>
+              <li>Scheduled posting to key platforms</li>
+              <li>Basic comment & DM monitoring</li>
+              <li>Performance overview each month</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>AI‑Powered Editing</h3>
+            <p>
+              Faster, smarter editing using AI tools to enhance your content.
+            </p>
+            <ul>
+              <li>Auto‑captions & translations</li>
+              <li>Smart cuts & pacing</li>
+              <li>Thumbnail & hook optimisation</li>
+              <li>Repurposing long videos into shorts</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>Content Strategy & Consulting</h3>
+            <p>
+              Simple, practical guidance on what to post and how often.
+            </p>
+            <ul>
+              <li>Profile & bio optimisation</li>
+              <li>Content themes for your niche</li>
+              <li>Posting frequency recommendations</li>
+              <li>Ideas for campaigns & offers</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section id="packages">
+        <h2 class="section-title">Packages</h2>
+        <p class="section-subtitle">
+          Clear, simple pricing designed for local businesses. No lock‑in contracts,
+          just month‑to‑month growth.
+        </p>
+
+        <div class="packages-grid">
+          <div class="package-card">
+            <div class="package-name">Starter</div>
+            <div class="package-price">$199 / month</div>
+            <div class="package-note">Perfect for trying reels for the first time.</div>
+            <ul>
+              <li>4 reels per month</li>
+              <li>Basic editing (music, captions, effects)</li>
+              <li>Caption & hashtag suggestions</li>
+              <li>1 on‑site shoot session (local area)</li>
+            </ul>
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Enquire About Starter
+            </button>
+          </div>
+
+          <div class="package-card">
+            <div class="package-tag">Most Popular</div>
+            <div class="package-name">Growth</div>
+            <div class="package-price">$399 / month</div>
+            <div class="package-note">For businesses ready to post consistently.</div>
+            <ul>
+              <li>8 reels per month</li>
+              <li>Advanced editing & transitions</li>
+              <li>Posting & scheduling to Instagram/Facebook</li>
+              <li>Simple monthly performance summary</li>
+            </ul>
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Enquire About Growth
+            </button>
+          </div>
+
+          <div class="package-card">
+            <div class="package-name">Premium</div>
+            <div class="package-price">$699 / month</div>
+            <div class="package-note">For brands that want to dominate local feeds.</div>
+            <ul>
+              <li>12–16 reels per month</li>
+              <li>AI‑enhanced editing & optimisation</li>
+              <li>Full account management (content & posting)</li>
+              <li>Monthly strategy call & content calendar</li>
+            </ul>
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Enquire About Premium
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why -->
+      <section>
+        <h2 class="section-title">Why Local Businesses Choose PointCookMedia</h2>
+        <p class="section-subtitle">
+          We’re not a generic agency. We live where your customers live, and we
+          understand how local communities think and buy.
+        </p>
+
+        <div class="why-grid">
+          <div>
+            <ul class="why-list">
+              <li>Hyper‑local focus on Point Cook and surrounding suburbs</li>
+              <li>Content that feels authentic, not over‑produced</li>
+              <li>Simple, transparent pricing with no hidden fees</li>
+              <li>Flexible month‑to‑month engagement</li>
+              <li>Built for Indian migrants & multicultural communities</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:0.9rem;">
+              We know that for many local businesses, social media feels confusing or
+              time‑consuming. Our goal is to remove that stress and give you a
+              reliable content engine that runs every month.
+            </p>
+            <div class="badge-list">
+              <div class="badge">Local Expertise</div>
+              <div class="badge">Short‑Form Specialists</div>
+              <div class="badge">AI‑Enhanced Workflow</div>
+              <div class="badge">Community‑Driven</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / CTA -->
+      <section id="contact">
+        <h2 class="section-title">Book a Free 10‑Minute Chat</h2>
+        <p class="section-subtitle">
+          Tell us about your business, and we’ll suggest a simple content plan you
+          can start this month.
+        </p>
+
+        <div class="cta">
+          <h2>Ready to Grow Your Business?</h2>
+          <p>
+            To get started, send us a DM on Instagram or an email with your business
+            name, location and what you’d like help with.
+          </p>
+          <p style="font-size:0.95rem;">
+            <strong>Instagram:</strong> @pointcookmedia<br />
+            <strong>Email:</strong> hello@pointcookmedia.com<br />
+            <strong>Service Area:</strong> Point Cook, Tarneit, Truganina, Werribee,
+            Williams Landing
+          </p>
+          <div class="hero-actions" style="justify-content:center;margin-top:16px;">
+            <button class="btn btn-primary">
+              DM “START” on Instagram
+            </button>
+            <button class="btn btn-outline">
+              Email Your Business Details
+            </button>
+          </div>
+          <p class="cta-note">
+            No lock‑in contracts. We start with one month and grow from there if
+            you’re happy with the results.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> PointCookMedia. All rights reserved.
+      &nbsp;|&nbsp;
+      Built for local businesses in Melbourne’s west.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+```
